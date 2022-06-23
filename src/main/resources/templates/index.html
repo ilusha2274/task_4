@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 <div style="display: flex">
-    <form method="post">
-        <input style="width: 120px;height:50px;font-size:25px;" name="fName" placeholder="Имя">
-        <input style="width: 120px;height:50px;font-size:25px;" name="lName" placeholder="Фамилия">
-        <input style="width: 120px;height:50px;font-size:25px;" name="patronymic" placeholder="Отчество">
+    <form th:action="@{/adduser}" th:object="${user}" method="post">
+        <input style="width: 120px;height:50px;font-size:25px;" type="text" th:field="*{fName}" id="fName" name="fName" placeholder="Имя">
+        <input style="width: 120px;height:50px;font-size:25px;" type="text" th:field="*{lName}" id="lName" name="lName" placeholder="Фамилия">
+        <input style="width: 120px;height:50px;font-size:25px;" type="text" th:field="*{patronymic}" id="patronymic" name="patronymic" placeholder="Отчество">
         <button style="width: 120px;height:50px;font-size:25px;" type="send" >send</button>
     </form>
 </div>
