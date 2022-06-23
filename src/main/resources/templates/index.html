@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="display: flex">
+    <form method="post">
+        <input style="width: 120px;height:50px;font-size:25px;" name="fName" placeholder="Имя">
+        <input style="width: 120px;height:50px;font-size:25px;" name="lName" placeholder="Фамилия">
+        <input style="width: 120px;height:50px;font-size:25px;" name="patronymic" placeholder="Отчество">
+        <button style="width: 120px;height:50px;font-size:25px;" type="send" >send</button>
+    </form>
+</div>
+<tr th:each ="user: ${users}">
+    <div style="display:flex">
+        <p style="margin: 5px; font-size:40px;" th:text="${user.fName}"></p>
+        <p style="margin: 5px; font-size:40px;" th:text="${user.lName}"></p>
+        <p style="margin: 5px; font-size:40px;" th:text="${user.patronymic}"></p>
+    </div>
+</tr>
+</body>
+</html>
